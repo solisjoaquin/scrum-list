@@ -14,6 +14,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <ThemeContextProvider>{children}</ThemeContextProvider>
+        <footer className="flex items-center justify-center w-full border-t pt-6">
+          <p className="flex items-center justify-center">Copyright 2023</p>
+        </footer>
       </body>
     </html>
   );

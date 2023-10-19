@@ -2,9 +2,25 @@
 import { Button } from "@/components/button";
 import { Input } from "@/components/input";
 import { useState, useEffect } from "react";
+import { useThemeContext } from "../context/list";
+
+const generateId = () => Math.random().toString(36).substr(2, 9);
 
 const InputName = () => {
   const [isClient, setIsClient] = useState(false);
+  const { setList } = useThemeContext();
+  const [tempValue, setTempValue] = useState({
+    name: "",
+  });
+
+  const handleChange = (e) => {
+    setTempValue({ ...tempValue, name: e.target.value, id: generateId() });
+  };
+
+  const handleClick = () => {
+    setList((prev) => [...prev, tempValue]);
+    setTempValue({ name: "", id: "" });
+  };
 
   useEffect(() => {
     setIsClient(true);
@@ -15,11 +31,14 @@ const InputName = () => {
         <Input
           type="email"
           placeholder="Email"
-          suppressHydrationWarning={true}
+          onChange={handleChange}
+          value={tempValue.name}
         />
       )}
 
-      <Button type="submit">Subscribe</Button>
+      <Button type="submit" onClick={handleClick}>
+        Subscribe
+      </Button>
     </div>
   );
 };

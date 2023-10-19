@@ -2,50 +2,7 @@ import CardList from "@/components/CardList";
 import { Badge } from "@/components/badge";
 import BadgeList from "@/components/badgeList";
 import { Button } from "@/components/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardTitle,
-  CardHeader,
-} from "@/components/card";
 import InputName from "@/components/inputName";
-
-const data = [
-  {
-    id: 1,
-    name: "John Doe",
-  },
-  {
-    id: 2,
-    name: "Jane Doe",
-  },
-  {
-    id: 3,
-    name: "John Smith",
-  },
-  {
-    id: 4,
-    name: "Jane Smith",
-  },
-  {
-    id: 5,
-    name: "John Doe2",
-  },
-  {
-    id: 6,
-    name: "Jane Doe2",
-  },
-  {
-    id: 7,
-    name: "John Smith2",
-  },
-  {
-    id: 8,
-    name: "Jane Smith2",
-  },
-];
 
 export default function Home() {
   return (
@@ -68,36 +25,20 @@ export default function Home() {
           <Button variant="default">Randomize list</Button>
         </div>
 
-        <div>
+        {/* <div>
           <Card>
             <CardHeader>
               <CardTitle>Card Title</CardTitle>
               <CardDescription>Card Description</CardDescription>
             </CardHeader>
-            {/* <CardContent>
-              {data.map((item) => (
-                <div key={item.id}>
-                  <p>{item.name}</p>
-                </div>
-              ))}
-            </CardContent> */}
+
             <CardList />
             <CardFooter>
               <Button>Copiar lista</Button>
             </CardFooter>
           </Card>
-        </div>
+        </div> */}
       </div>
-      <footer className="flex items-center justify-center w-full border-t pt-6">
-        <p
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=tailwindcss&utm_campaign=oss"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Copyright 2023
-        </p>
-      </footer>
     </main>
   );
 }

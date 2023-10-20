@@ -1,14 +1,11 @@
 "use client";
-import { useThemeContext } from "../context/list";
 import { CardContent } from "./card";
 
-export default function CardList() {
-  const { list } = useThemeContext();
-
+export default function CardList({ randomList }) {
   return (
     <>
       <CardContent>
-        {list.map((item) => (
+        {randomList.map((item) => (
           <div key={item.id}>
             <p>{item.name}</p>
           </div>
